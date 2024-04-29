@@ -35,9 +35,8 @@ public class HistoryOrderController extends HttpServlet
             request.setAttribute("listorder", list);
             request.getRequestDispatcher("HistoryOrder.jsp").forward(request, response);
         }
-        catch(SQLException | ClassNotFoundException e)
-        {
-            throw new RuntimeException(e);
+        catch(SQLException | ClassNotFoundException e) {
+//            throw new RuntimeException(e);
         }
     }
 

@@ -107,15 +107,37 @@ public class OrderDao
     }
     //get list orders in database
     public List<Order> getAllOrders(String username) throws SQLException, ClassNotFoundException {
-        List<Order> list = new ArrayList<Order>();
+        List<Order> list = new ArrayList<>();
         DataDB db = new DataDB();
         PreparedStatement sta = db.getStatement("select * from order1 where username = ? order by date desc");
         sta.setString(1, username);
         ResultSet rs = sta.executeQuery();
         Order order;
         while (rs.next()) {
-            order = new Order(rs.getString("id"), rs.getString("username"), rs.getString("payment"), rs.getString("ship"), rs.getString("fullname"), rs.getString("phone"), rs.getString("address"), rs.getInt("total"), rs.getDate("date"), rs.getInt("totalship"), rs.getString("comment"), rs.getString("status"), rs.getInt("number"), rs.getTime("date"));
-            Order orderVerify = new Order(rs.getString("id"), rs.getString("username"), rs.getString("payment"), rs.getString("ship"), rs.getString("fullname"), rs.getString("phone"), rs.getString("address"), rs.getInt("total"), rs.getInt("totalship"), rs.getString("comment"));
+            order = new Order(rs.getString("id"),
+                    rs.getString("username"),
+                    rs.getString("payment"),
+                    rs.getString("ship"),
+                    rs.getString("fullname"),
+                    rs.getString("phone"),
+                    rs.getString("address"),
+                    rs.getInt("total"),
+                    rs.getDate("date"),
+                    rs.getInt("totalship"),
+                    rs.getString("comment"),
+                    rs.getString("status"),
+                    rs.getInt("number"),
+                    rs.getTime("date"));
+            Order orderVerify = new Order(rs.getString("id"),
+                    rs.getString("username"),
+                    rs.getString("payment"),
+                    rs.getString("ship"),
+                    rs.getString("fullname"),
+                    rs.getString("phone"),
+                    rs.getString("address"),
+                    rs.getInt("total"),
+                    rs.getInt("totalship"),
+                    rs.getString("comment"));
             orderVerify.setStringDate(rs.getString("date"));
             getProductOrder(orderVerify);
 

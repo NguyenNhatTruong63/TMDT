@@ -65,8 +65,9 @@
     <div class="header-top" style="height: 100px">
         <div class="header-link">
             <div id="logo" class="navbar nav-menu" style="margin-left: 30px">
-                <a href=""><img src="../Image/image_web/logoshop.jpg" title="Cửa hàng" alt="Your Store"
-                      style="width: 80px; height: 100%; margin-top: -15px; border-radius: 50%"  class="img-responsive"/><p style="font-size: 20px; font-weight: bold ">Book Store</p> </a>
+                <a href=""><img src="https://img.freepik.com/premium-photo/book-logo_1045671-467.jpg?w=740" title="Cửa hàng" alt="Your Store"
+                                style="width: 80px; height: 100%; border-radius: 50%"  class="img-responsive"/><p style="font-size: 20px; font-weight: bold; margin-top: -8px">Book Store</p>
+                </a>
             </div>
             <nav id="menu" class="navbar nav-menu">
                 <div id="topCategoryList" class="main-menu menu-navbar clearfix">

@@ -223,7 +223,8 @@
                 <div class="row">
                     <div class="col-lg-7 parallex-description">
                         <div class="parallex-inner">
-                            <div class="parallex-inner-logo"><img style="width: 300px; height: 200px; margin-top: -40px" src="Image/image_web/logoshop.jpg" alt=""></div>
+<%--                            <div class="parallex-inner-logo"><img style="width: 300px; height: 200px; margin-top: -40px" src="Image/image_web/logoshop.jpg" alt=""></div>--%>
+                            <div class="parallex-inner-logo"><img src="https://img.freepik.com/premium-photo/book-logo_1045671-467.jpg?w=740" alt=""></div>
                             <div class="parallex-inner-descritpion">
                                 <p>Sách là một mặt hàng có nhu cầu không ngừng từ mọi lứa tuổi và tầng lớp xã hội.
                                     Dù cho xu hướng đọc sách có thể biến đổi theo thời gian, nhu cầu cơ bản về kiến thức,
@@ -257,19 +258,19 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide text-center">
                                 <div class="brand-item">
-                                    <img src="https://upload.wikimedia.org/wikipedia/vi/e/e1/Logo_HCMUAF.svg"
+                                    <img src="https://statics.vincom.com.vn/containers/vincom_ho/thuong_hieu/anh_logo/Nh%C3%A0%20s%C3%A1ch%20Ph%C6%B0%C6%A1ng%20Nam.png/e798824a8c9999f855717a47bfc80ba9.webp"
                                          alt="LogoNLU" class="img-responsive m-auto" style="height: 90px"/>
                                 </div>
                             </div>
                             <div class="swiper-slide text-center">
                                 <div class="brand-item">
-                                    <img src="https://upload.wikimedia.org/wikipedia/vi/2/2d/Logo_UEL_-_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Kinh_t%E1%BA%BF_-_Lu%E1%BA%ADt.svg"
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWBdkuB36FhKIFJf9qthxi-XXpv9dCucHdmPvzaxhEnQ&s"
                                          alt="LogoUEL" class="img-responsive m-auto" style="height: 90px"/>
                                 </div>
                             </div>
                             <div class="swiper-slide text-center">
                                 <div class="brand-item">
-                                    <img src="https://upload.wikimedia.org/wikipedia/vi/4/49/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Khoa_h%E1%BB%8Dc_X%C3%A3_h%E1%BB%99i_v%C3%A0_Nh%C3%A2n_v%C4%83n%2C_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Qu%E1%BB%91c_gia_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg"
+                                    <img src="https://hcmussh.edu.vn/img/avatar.png?t=1649046939342"
                                          alt="LogoUSSH" class="img-responsive m-auto" style="height: 90px"/>
                                 </div>
                             </div>
@@ -287,8 +288,8 @@
                             </div>
                             <div class="swiper-slide text-center">
                                 <div class="brand-item">
-                                    <img src="https://i.gyazo.com/7d1bab302c86880f9eb91cd04388edc2.png"
-                                         alt="LogoKimDong" class="img-responsive m-auto" style="height: 90px"/>
+                                    <img src="https://img.giftpop.vn/brand/logo/NSCACHEP.png"
+                                         alt="LogoCaChep" class="img-responsive m-auto" style="height: 90px"/>
                                 </div>
                             </div>
                             <div class="swiper-slide text-center">
