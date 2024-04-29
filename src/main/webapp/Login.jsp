@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta name="google-signin-client_id" content="588971069034-2223dffri7rruaqovf4n9vk5hnf6u28s.apps.googleusercontent.com">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="CSS/stylesheet.css">
@@ -43,7 +44,7 @@
                 <div class="col-sm-6">
                     <div class="well">
                         <h1 style="font-size: 30px;">ĐĂNG NHẬP TÀI KHOẢN</h1>
-                        <form action="/Login" method="post" id="form">
+                        <form action="Login" method="post" id="form">
                             <div class="form-group">
                                 <label class="control-label" for="input-email" style="font-size: 18px;">Địa chỉ
                                     Email đăng nhập</label>
@@ -59,14 +60,12 @@
                                 <div class="g-recaptcha" data-sitekey="6Lfgxb0kAAAAAApXx43Y6BkDxbvs6QKDPmnIVsHm"></div>
                                 <p id="error" style="color:red"></p>
                                 <!-- link trang quên mật khẩu -->
-                                <a href="Forgottenpassword.jsp">Quên
-                                    mật khẩu?</a>
+                                <a href="Forgottenpassword.jsp">Quên mật khẩu?</a>
                             </div>
                             <input type="submit" value="Đăng nhập" class="btn btn-primary" />
-
-<%--                          <li><a ><i class="fa-brands fa-google"></i></a></li> --%>
-
-
+                            <div class="button-google">
+                                <button type="button" name="button" id="google" class="g-signin2" data-onsuccess="onSignIn" value=""></button>
+                            </div>
                         </form>
                         <script>
                             window.onload = function (){
@@ -93,5 +92,37 @@
 </div>
 
 <jsp:include page="Layout/Footer.jsp" />
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+    function onSignIn(googleUser) {
+        // Lấy thông tin người dùng từ tài khoản Google
+        var profile = googleUser.getBasicProfile();
+        var id_token = googleUser.getAuthResponse().id_token;
+
+        // Gửi yêu cầu đăng ký thành công qua AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', "Login"); // Thay thế '/signup' bằng URL của endpoint xử lý đăng ký trên máy chủ của bạn
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Đăng ký thành công, xử lý phản hồi
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    // Đăng ký thành công, thực hiện các hành động cần thiết
+                    console.log('Đăng ký thành công');
+                    window.location.href = 'index.jsp'; // Chuyển hướng đến trang đăng ký thành công
+                } else {
+                    // Đăng ký không thành công, xử lý lỗi
+                    console.error('Đăng ký không thành công:', response.error);
+                    document.getElementById('ero').textContent = response.error; // Hiển thị thông báo lỗi
+                }
+            } else {
+                // Xử lý lỗi từ máy chủ
+                console.error('Đã xảy ra lỗi khi gửi yêu cầu đăng ký:', xhr.statusText);
+            }
+        };
+        xhr.send('id_token=' + id_token); // Gửi mã thông tin của tài khoản Google đến máy chủ
+    }
+</script>
 </body>
 </html>

@@ -128,7 +128,7 @@
                                                     } catch (SQLException | ClassNotFoundException e) {
                                                         throw new RuntimeException(e);
                                                     }
-                                                    total+=product.getPrice_buy()*cart.getCart().get(id);
+                                                    total +=product.getPrice_buy()*cart.getCart().get(id);
                                             %>
                                             <tr>
                                                 <td class="text-center product-cart-thumb">
