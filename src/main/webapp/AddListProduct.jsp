@@ -43,8 +43,7 @@
                         <div class="card card-default">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="responsive-data-table" class="table"
-                                           style="width:100%">
+                                    <table id="responsive-data-table" class="table" style="width:100%">
                                         <thead>
                                         <tr>
                                             <th>Sản phẩm</th>

@@ -19,7 +19,8 @@ public class AdminListOrderController extends HttpServlet {
             List<Order> list  = dao.getAllOrders();
             request.setAttribute("listorder", list);
             request.getRequestDispatcher("AdminListOrder.jsp").forward(request, response);
-        } catch (SQLException | ClassNotFoundException e) {
+        }
+        catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

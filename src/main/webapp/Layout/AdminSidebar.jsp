@@ -4,7 +4,7 @@
     <div id="sidebar" class="sidebar ec-sidebar-footer">
 
         <div class="ec-brand">
-            <a href="AdminIndex" title="CVT">
+            <a href="AdminIndex" title="BookStore">
                 <%--          <img class="ec-brand-icon" src="assets/img/logoshop.png" alt="" />--%>
                 <span class="ec-brand-name text-truncate">Book Store</span>
             </a>

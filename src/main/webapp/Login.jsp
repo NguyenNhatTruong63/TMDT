@@ -46,16 +46,15 @@
                         <h1 style="font-size: 30px;">ĐĂNG NHẬP TÀI KHOẢN</h1>
                         <form action="Login" method="post" id="form">
                             <div class="form-group">
-                                <label class="control-label" for="input-email" style="font-size: 18px;">Địa chỉ
-                                    Email đăng nhập</label>
-                                <input type="text" name="email" value="" placeholder="Nhập địa chỉ email"
-                                       id="input-email" class="form-control"  required/>
+                                <label class="control-label" for="input-email" style="font-size: 18px;">Địa chỉ Email đăng nhập</label>
+                                <input type="text" name="email" value="" placeholder="Nhập địa chỉ email" id="input-email" class="form-control"  required/>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="input-password" style="font-size: 18px;">Mật
-                                    khẩu</label>
-                                <input type="password" name="password" value="" placeholder="Mật khẩu"
-                                       id="input-password" class="form-control" required />
+                                <label class="control-label" for="input-password" style="font-size: 18px;">Mật khẩu</label>
+                                <input type="password" name="password" value="" placeholder="Mật khẩu" id="input-password" class="form-control"
+                                       title="Vui lòng nhập 6-10 ký tự bao gồm chữ in hoa, chữ thường, số, và các ký tự đặc biệt"
+                                       minlength="6" maxlength="10" required />
+                                <i class="toggle-password fa-solid fa-eye-slash" style="position: relative;float: right;margin-top: -25px;margin-right: 20px; cursor: pointer" onclick="togglePasswordVisibility('input-password')"></i>
                                 <br>
                                 <div class="g-recaptcha" data-sitekey="6Lfgxb0kAAAAAApXx43Y6BkDxbvs6QKDPmnIVsHm"></div>
                                 <p id="error" style="color:red"></p>
@@ -94,6 +93,39 @@
 <jsp:include page="Layout/Footer.jsp" />
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
+    function togglePasswordVisibility(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const icon = document.querySelector('.toggle-password');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.add('fa-eye');
+            icon.classList.remove('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            icon.classList.add('fa-eye-slash');
+            icon.classList.remove('fa-eye');
+        }
+    }
+</script>
+<script>
+    // Lấy tham chiếu đến phần tử input mật khẩu
+    var passwordInput = document.getElementById('input-password');
+
+    // Bắt sự kiện khi người dùng nhập vào input mật khẩu
+    passwordInput.addEventListener('input', function(event) {
+        // Lấy giá trị hiện tại của input mật khẩu
+        var passwordValue = event.target.value;
+
+        // Kiểm tra xem có khoảng trắng trong mật khẩu không
+        if (passwordValue.indexOf(' ') !== -1) {
+            // Nếu có khoảng trắng, loại bỏ khoảng trắng đó
+            event.target.value = passwordValue.replace(/\s/g, '');
+        }
+    });
+
+</script>
+<script>
     function onSignIn(googleUser) {
         // Lấy thông tin người dùng từ tài khoản Google
         var profile = googleUser.getBasicProfile();
@@ -124,5 +156,6 @@
         xhr.send('id_token=' + id_token); // Gửi mã thông tin của tài khoản Google đến máy chủ
     }
 </script>
+
 </body>
 </html>

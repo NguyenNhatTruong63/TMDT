@@ -14,18 +14,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap"
-            rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet"/>
-
     <link href="assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
     <link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet"/>
-
     <link id="ekka-css" href="assets/css/ekka.css" rel="stylesheet"/>
-
-    <link href="assets/img/logoshop.png" rel="shortcut icon"/>
+<%--    <link href="assets/img/logoshop.png" rel="shortcut icon"/>--%>
 </head>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-light ec-header-light" id="body">
@@ -65,11 +59,7 @@
                                 <!-- User image -->
                                 <li class="dropdown-header">
                                     <img src="assets/img/user/user.png" class="img-circle" alt="User Image"/>
-                                    <div class="d-inline-block">
-                                        Admin <small class="pt-1">
-                                        <p>admin@gmail.com</p>
-                                    </small>
-                                    </div>
+                                    <div class="d-inline-block">Admin <small class="pt-1"><p>admin@gmail.com</p></small></div>
                                 </li>
                                 <li class="right-sidebar-in">
                                     <a href="javascript:0"> <i class="mdi mdi-settings-outline"></i> Cài đặt </a>

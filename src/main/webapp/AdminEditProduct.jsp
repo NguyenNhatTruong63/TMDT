@@ -1,4 +1,6 @@
 <%@ page import="Entity.Product" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="java.util.Locale" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -30,6 +32,8 @@
     <%--  <link href="assets/img/logoshop.png" rel="shortcut icon" />--%>
 
 </head>
+<%Locale locale = new Locale("vi", "VN");%>
+<%NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);%>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-dark ec-header-light" id="body">
 <!-- WRAPPER -->
@@ -135,67 +139,79 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-5 col-lg-6">
-                                            <div class="row product-overview">
+                                            <div class="row product-overview" style="width: 600px">
                                                 <div class="col-12">
-                                                    <Label class="product-title">Tên sản phẩm
-                                                        <input type="text" class="form-control" name="nameproduct"
-                                                               value="<%=product.getName()%>" required>
-                                                    </Label>
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <Label class="product-sku">Mã sản phẩm: <label
-                                                            class="form-control"><%=product.getId()%>
-                                                    </label>
+                                                    <div>
+                                                        <Label class="product-sku">Mã sản phẩm: <label
+                                                                class="form-control"><%=product.getId()%>
+                                                        </label>
+                                                        </Label>
 
-                                                    </Label>
-                                                    <Label class="product-sku">Thương hiệu
-                                                        <input type="text" class="form-control" name="brand"
-                                                               value="<%=product.getBrand()%>" required>
-                                                    </Label>
-                                                    <span class="text-uppercase">Loại sản phẩm</span>
-                                                    <label for="lang-select">
-                                                        <select name="category" id="lang-select" class="form-control">
-                                                            <% if (product.getCategory() == 1) { %>
-                                                            <option value="4" selected>Sách giáo trình</option>
-                                                            <option value="3">Sách cũ</option>
-                                                            <option value="2">Sách tiếng anh</option>
-                                                            <option value="1">Sách chuyên ngành</option>
-                                                            <% } else if (product.getCategory() == 2) { %>
-                                                            <option value="4">Sách giáo trình</option>
-                                                            <option value="3" selected>Sách cũ</option>
-                                                            <option value="2">Sách tiếng anh</option>
-                                                            <option value="1">Sách chuyên ngành</option>
-                                                            <% } else if (product.getCategory() == 3) { %>
-                                                            <option value="4">Sách giáo trình</option>
-                                                            <option value="3">Sách cũ</option>
-                                                            <option value="2" selected>Sách tiếng anh</option>
-                                                            <option value="1">Sách chuyên ngành</option>
-                                                            <% } else { %>
-                                                            <option value="4">Sách giáo trình</option>
-                                                            <option value="3">Sách cũ</option>
-                                                            <option value="2">Sách tiếng anh</option>
-                                                            <option value="1" selected>Sách chuyên ngành</option>
-                                                            <% } %>
-                                                        </select>
-                                                    </label>
-                                                    <br>
-                                                    <Label class="product-prict">Giá
-                                                        <input type="text" class="form-control" name="price"
-                                                               value="<%=product.getPrice()%>" required>VNĐ
-                                                    </Label>
-                                                    <br>
-                                                    <Label class="product-sku">Giá bán
-                                                        <input type="text" class="form-control" name="pricebuy"
-                                                               value="<%=product.getPrice_buy()%>" required>VNĐ
-                                                    </Label>
-                                                    <br>
-                                                    <Label class="product-stock">Số lượng
-                                                        <input type="number" class="form-control" name="quantity"
-                                                               value="<%=product.getQuantity()%>" required>
-                                                    </Label>
-                                                    <label class="product-detail">Chi tiết
-                                                        <input type="text" class="form-control" name="detail"
-                                                               value="<%=product.getDetail()%>" required>
-                                                    </label>
+                                                        <Label class="product-title">Tên sản phẩm
+                                                            <input type="text" class="form-control" name="nameproduct"
+                                                                   value="<%=product.getName()%>" required>
+                                                        </Label>
+                                                    </div>
+                                                    <div>
+                                                        <Label class="product-sku">Thương hiệu
+                                                            <input type="text" class="form-control" name="brand"
+                                                                   value="<%=product.getBrand()%>" required>
+                                                        </Label>
+
+                                                        <%--                                                    <span class="text-uppercase">Loại sản phẩm</span>--%>
+                                                        <Label for="lang-select"> Loại sản phẩm
+                                                            <select name="category" id="lang-select"
+                                                                    class="form-control">
+                                                                <% if (product.getCategory() == 1) { %>
+                                                                <option value="4" selected>Sách giáo trình</option>
+                                                                <option value="3">Sách cũ</option>
+                                                                <option value="2">Sách tiếng anh</option>
+                                                                <option value="1">Sách chuyên ngành</option>
+                                                                <% } else if (product.getCategory() == 2) { %>
+                                                                <option value="4">Sách giáo trình</option>
+                                                                <option value="3" selected>Sách cũ</option>
+                                                                <option value="2">Sách tiếng anh</option>
+                                                                <option value="1">Sách chuyên ngành</option>
+                                                                <% } else if (product.getCategory() == 3) { %>
+                                                                <option value="4">Sách giáo trình</option>
+                                                                <option value="3">Sách cũ</option>
+                                                                <option value="2" selected>Sách tiếng anh</option>
+                                                                <option value="1">Sách chuyên ngành</option>
+                                                                <% } else { %>
+                                                                <option value="4">Sách giáo trình</option>
+                                                                <option value="3">Sách cũ</option>
+                                                                <option value="2">Sách tiếng anh</option>
+                                                                <option value="1" selected>Sách chuyên ngành</option>
+                                                                <% } %>
+                                                            </select>
+                                                        </Label>
+                                                    </div>
+
+                                                    <div>
+
+                                                        <%--                                                    <br>--%>
+                                                        <Label class="product-prict">Giá: VND
+                                                            <input type="text" class="form-control" name="price"
+                                                                   value="<%=currencyFormatter.format(product.getPrice())%>"
+                                                                   required>
+                                                        </Label>
+                                                        <%--                                                    <br>--%>
+                                                        <Label class="product-sku">Giá bán: VND
+                                                            <input type="text" class="form-control" name="pricebuy"
+                                                                   value="<%=currencyFormatter.format(product.getPrice_buy()) %>"
+                                                                   required>
+                                                        </Label>
+                                                    </div>
+                                                    <div>
+                                                        <Label class="product-stock">Số lượng
+                                                            <input type="number" class="form-control" name="quantity"
+                                                                   value="<%=product.getQuantity()%>" required>
+                                                        </Label>
+                                                        <label class="product-detail">Chi tiết
+                                                            <input type="text" class="form-control" name="detail"
+                                                                   value="<%=product.getDetail()%>" required>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

@@ -50,7 +50,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row ec-vendor-uploads">
-                                    <form action="AdminAddProduct" method="post" enctype="multipart/form-data">
+                                     <form action="AdminAddProduct" method="post" enctype="multipart/form-data">
                                         <div class="col-lg-4">
                                             <div class="ec-vendor-img-upload">
                                                 <div class="ec-vendor-main-img">

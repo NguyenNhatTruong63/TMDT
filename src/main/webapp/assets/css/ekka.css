@@ -12194,6 +12194,7 @@ textarea.form-control-lg {
   font-size: 16px;
 }
 .product-detail .product-sku {
+  margin-right: 30px;
   padding-bottom: 15px;
 }
 .product-detail .ec-ofr {
@@ -18597,6 +18598,7 @@ p, li, span {
 }
 
 label {
+  margin-left: 130px;
   text-transform: capitalize;
   display: inline-block;
   margin-bottom: 0.5rem;

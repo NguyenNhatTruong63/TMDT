@@ -51,7 +51,7 @@ public class SendMail extends HttpServlet {
                 email.addTo(account.getUsername());
 
                 // Tiêu đề
-                email.setSubject("CVT: Gui ma OTP cho ban. Ma OTP nay co hieu luc trong 60s ke tu khi nhan duoc mail nay!");
+                email.setSubject("BookStore: Gui ma OTP cho ban. Ma OTP nay co hieu luc trong 60s ke tu khi nhan duoc mail nay!");
 
                 // Nội dung email
                 email.setMsg("Ma OTP cua ban la: " + OTP);
